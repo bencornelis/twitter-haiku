@@ -1,0 +1,17 @@
+$("#results").html("<%= j render('haikus') %>");
+$("li").mouseenter(function() {
+  var id = $(this).attr("id");
+  if ($("#" + id).text()) {
+    $.ajax({
+      method: "POST",
+      dataType: "script",
+      url: '/user_searches',
+      data: { author_id: id }
+    });
+  }
+  $(this).find('.other-haikus').show();
+});
+
+$("li").mouseleave(function() {
+  $(this).find('.other-haikus').hide();
+});

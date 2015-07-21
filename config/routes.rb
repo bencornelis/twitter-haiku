@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root "searches#new"
-  resources :searches
+  root "haiku_searches#new"
+  resources :haiku_searches
+  resources :user_searches
 end

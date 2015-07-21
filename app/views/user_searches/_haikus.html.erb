@@ -1,0 +1,5 @@
+<ul class="list-unstyled list-group">
+  <% @haikus.each do |haiku| %>
+    <%= render "haiku_searches/haiku", haiku: haiku %>
+  <% end %>
+</ul>
