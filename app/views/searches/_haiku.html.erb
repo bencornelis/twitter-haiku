@@ -1,0 +1,11 @@
+<li class="haiku list-group-item">
+  <p>
+    <%= haiku.text %>
+  </p>
+  <p class="haiku-author">
+    - <%= haiku.user.screen_name %> |
+    <%= haiku.retweet_count %> retweets |
+    <%= haiku.favorite_count %> favorites |
+    <%= @search.haiku_count(haiku.user.screen_name) %> haikus
+  </p>
+</li>

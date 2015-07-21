@@ -1,0 +1,16 @@
+<h3>Find a twitter haiku:</h3>
+<%= form_tag searches_path, remote: true do %>
+  <div class="form-group">
+    <%= label_tag 'mood_:)', 'Happy' %>
+    <%= radio_button_tag :mood, ':)', true %>
+
+    <%= label_tag 'mood_:(', 'Sad' %>
+    <%= radio_button_tag :mood, ':(' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :search_term, 'Enter a haiku topic here.' %>
+    <%= text_field_tag :search_term %>
+  </div>
+  <%= submit_tag "Find Haikus", class: "btn btn-info" %>
+<% end %>
+<hr>
