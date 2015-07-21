@@ -1,5 +1,7 @@
-class HaikuSearch < Search
+class HaikuSearch
+  include TwitterClient
   attr_reader :mood, :topic
+
 
   def initialize(attr)
     @mood = attr[:mood]
@@ -7,7 +9,7 @@ class HaikuSearch < Search
   end
 
   def find_haikus
-    results = CLIENT.search("#haiku #{mood} #{topic} -rt", result_type: "mixed").take(20)
+    results = CLIENT.search("#haiku #{topic} #{mood} -rt", result_type: "mixed").take(20)
     if results.empty?
       results = CLIENT.search("#haiku #{topic} -rt", result_type: "mixed").take(20)
     end

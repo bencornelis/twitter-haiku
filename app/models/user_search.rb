@@ -1,4 +1,5 @@
-class UserSearch < Search
+class UserSearch
+  include TwitterClient
   attr_reader :screen_name, :user
 
   def initialize(user_id)
